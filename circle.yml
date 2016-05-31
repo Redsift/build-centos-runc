@@ -13,7 +13,7 @@ dependencies:
     
 test:
   override:
-    - tar -ztvf ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz   
+    - tar -Jtvf ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz   
         
 deployment:
   prod:
