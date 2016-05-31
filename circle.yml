@@ -11,8 +11,12 @@ dependencies:
     - |
         cat ./build-runc | docker run -i -v ${CIRCLE_ARTIFACTS}:/artifacts -e RUNC_VERSION=${RUNC_VERSION} quay.io/redsift/buildos-centos sh
     
+test:
+  override:
+    - tar -ztvf ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz   
+        
 deployment:
   prod:
     branch: master
     commands:
-      - aws s3 cp ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz s3://${S3_BUCKET}/thirdparty/runc/${RUNC_VERSION}
+      - aws s3 cp ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz s3://${S3_BUCKET}/thirdparty/runc/${RUNC_VERSION}/runc-centos-71.tar.xz
