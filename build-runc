@@ -8,4 +8,4 @@ curl -L https://github.com/opencontainers/runc/archive/v${RUNC_VERSION}.tar.gz |
 cd runc-${RUNC_VERSION}
 make BUILDTAGS="selinux"
 
-tar -Jcf /artifacts/runc-centos-71.tar.xz runc
+cp ./runc /artifacts/runc

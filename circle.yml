@@ -13,10 +13,4 @@ dependencies:
     
 test:
   override:
-    - tar -Jtvf ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz   
-        
-deployment:
-  prod:
-    branch: master
-    commands:
-      - aws s3 cp ${CIRCLE_ARTIFACTS}/runc-centos-71.tar.xz s3://${S3_BUCKET}/thirdparty/runc/${RUNC_VERSION}/runc-centos-71.tar.xz
+    - file ${CIRCLE_ARTIFACTS}/runc
