@@ -9,7 +9,6 @@ dependencies:
   override:
     - docker info
     - |
-        sudo pip install awscli
         cat ./build-runc | docker run -i -v ${CIRCLE_ARTIFACTS}:/artifacts -e RUNC_VERSION=${RUNC_VERSION} quay.io/redsift/buildos-centos sh
     
 deployment:
