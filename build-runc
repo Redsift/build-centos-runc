@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 cd /tmp 
 
 curl -L https://github.com/opencontainers/runc/archive/v${RUNC_VERSION}.tar.gz | tar -xz 
